@@ -20,6 +20,7 @@
   justify-items: end;
   align-items: center;
   min-height: 648px;
+  height: 100vh;
 }
 
 .decorated-zone {
@@ -163,6 +164,7 @@ main {
   justify-content: center;
   box-sizing: 100vh;
   min-height: 647px;
+  height: 100vh;
   padding-block: 10px;
   text-shadow: 2px 2px 0 var(--accent-color, #ff0070);
 }
