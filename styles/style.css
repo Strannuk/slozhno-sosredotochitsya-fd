@@ -1,5 +1,210 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  padding: 10px;
+  color: var(--main-text-color, #f1b2ce);
+  font-family: var(--font), sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 1.3;
+  background-image: var(--background-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  justify-items: end;
+  align-items: center;
+  min-height: 648px;
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::after, 
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+}
+
+.decorated-zone::after {
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid var(--accent-color, #ff0070);
+  border-left: 1px solid var(--accent-color, #ff0070);
+}
+
+.decorated-zone::before {
+  top: 0;
+  right: 0;
+  border-top: 1px solid var(--accent-color, #ff0070);
+  border-right: 1px solid var(--accent-color, #ff0070);
+}
+
+.header__decoration-element {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-inline-end: 29px;
+  color: var(--accent-color, #ff0070);
+  line-height: 1.39;
+  text-transform: uppercase;
+}
+
+.header__decoration-element::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 43px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px var(--accent-color, #ff0070);
+  background-color: var(--accent-color, #ff0070);
+  inline-size: 9px;
+  block-size: 9px;
+}
+
+.header__theme-menu {
+  padding-block-end: 5px;
+  color: var(--accent-color, #ff0070);
+  line-height: 1.1;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.header__theme-menu-button {
+  border: none;
+  padding-inline: 13px;
+  text-transform: lowercase;
+  background-color: transparent;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--accent-color, #ff0070);
+}
+
+.title-decor {
+  justify-self: start;
+  color: #db00ff;
+  font-weight: 700;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 0.8;
+  text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
+}
+
+.header__content {
+  inline-size: clamp(355px, 100%, 364px);
+}
+
+.content-decor {
+  display: flex;
+  flex-direction: column;
+  justify-self: end;
+  color: #000028;
+  font-weight: 700;
+  line-height: 1.3;
+  background-color: var(--accent-color, #ff0070);
+}
+
+.text-decor {
+  color: var(--accent-color, #ff0070);
+  font-weight: 700;
+  line-height: 1.3;
+  font-size: 18px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding-block: 50px;
+}
+
+.spacing {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.li-spasing {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.link-decor {
+  text-decoration: none;
+  text-shadow: 2px 2px 0px var(--accent-color, #ff0070);
+}
+
+.images-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.images-section__header {
+  font-size: 18px;
+}
+
+.footer {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  box-sizing: 100vh;
+  min-height: 647px;
+  padding-block: 10px;
+  text-shadow: 2px 2px 0 var(--accent-color, #ff0070);
+}
+
+
+@media (width >= 768px) {
+  .page {
+    padding: 20px;
+  }
+
+  main {
+  gap: 80px;
+  }
+
+  .header {
+    min-height: 984px;
+  }
+
+  .title-decor {
+    margin-inline-start: -20px;
+  }
+
+  .section-first {
+    padding-block-start: 30px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .section-second {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap:20px;
+  }
+
+  .section-second-title {
+    inline-size: 14.75rem;
+  }
+
+  .section-third {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: min-content;
+  }
+
 }
