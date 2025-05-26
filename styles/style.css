@@ -13,14 +13,19 @@
   background-attachment: fixed;
 }
 
-.header {
-  position: relative;
+.header,
+.footer {
   display: grid;
-  grid-template-rows: 1fr min-content 1fr;
-  justify-items: end;
   align-items: center;
+  justify-content: center;
   min-height: 648px;
   height: 100vh;
+}
+
+.header {
+  position: relative;
+  grid-template-rows: 1fr min-content 1fr;
+  justify-items: end;
 }
 
 .decorated-zone {
@@ -159,14 +164,8 @@ main {
 }
 
 .footer {
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  box-sizing: 100vh;
-  min-height: 647px;
-  height: 100vh;
   padding-block: 10px;
-  text-shadow: 2px 2px 0 var(--accent-color, #ff0070);
+  text-shadow: 2px 2px var(--accent-color, #ff0070);
 }
 
 
