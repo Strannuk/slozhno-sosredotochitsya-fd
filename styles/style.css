@@ -6,6 +6,7 @@
   font-size: 18px;
   font-style: normal;
   line-height: 1.3;
+  background-color: var(--background-color, #000028);
   background-image: var(--background-image);
   background-repeat: no-repeat;
   background-position: center;
@@ -16,23 +17,29 @@
 .header,
 .footer {
   display: grid;
-  align-items: center;
   justify-content: center;
-  min-height: 648px;
+  align-items: center;
   height: 100vh;
+  min-height: 648px;
 }
 
 .header {
   position: relative;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr min-content 1fr;
   justify-items: end;
+  justify-content: space-between;
+}
+
+.header__title {
+  grid-column: span 2;
 }
 
 .decorated-zone {
   position: relative;
 }
 
-.decorated-zone::after, 
+.decorated-zone::after,
 .decorated-zone::before {
   content: "";
   position: absolute;
@@ -43,15 +50,15 @@
 .decorated-zone::after {
   bottom: 0;
   left: 0;
-  border-bottom: 1px solid var(--accent-color, #ff0070);
-  border-left: 1px solid var(--accent-color, #ff0070);
+  border-bottom: 1px solid var(--decorated-header-color, #ff0070);
+  border-left: 1px solid var(--decorated-header-color, #ff0070);
 }
 
 .decorated-zone::before {
   top: 0;
   right: 0;
-  border-top: 1px solid var(--accent-color, #ff0070);
-  border-right: 1px solid var(--accent-color, #ff0070);
+  border-top: 1px solid var(--decorated-header-color, #ff0070);
+  border-right: 1px solid var(--decorated-header-color, #ff0070);
 }
 
 .header__decoration-element {
@@ -59,7 +66,7 @@
   top: 0;
   right: 0;
   padding-inline-end: 29px;
-  color: var(--accent-color, #ff0070);
+  color: var(--decorated-header-color, #ff0070);
   line-height: 1.39;
   text-transform: uppercase;
 }
@@ -70,15 +77,16 @@
   top: 8px;
   left: 43px;
   border-radius: 50%;
-  box-shadow: 0px 0px 4px var(--accent-color, #ff0070);
-  background-color: var(--accent-color, #ff0070);
+  box-shadow: 0px 0px 4px var(--decorated-header-color, #ff0070);
+  background-color: var(--decorated-header-color, #ff0070);
   inline-size: 9px;
   block-size: 9px;
 }
 
 .header__theme-menu {
+  grid-column: 2;
   padding-block-end: 5px;
-  color: var(--accent-color, #ff0070);
+  color: var(--decorated-header-color, #ff0070);
   line-height: 1.1;
 }
 
@@ -95,13 +103,23 @@
   background-color: transparent;
 }
 
+.header__theme-menu-button:hover {
+  border: 1px solid var(--button-hover, rgba(255, 0, 112, 0.4));
+}
+
+.header__theme-menu-button:focus-visible {
+  border: none;
+  border-bottom: 1px solid currentColor;
+}
+
 .header__theme-menu-button_active {
-  border: 1px solid var(--accent-color, #ff0070);
+  border: 1px solid var(--decorated-header-color, #ff0070);
+  pointer-events: none;
 }
 
 .title-decor {
   justify-self: start;
-  color: #db00ff;
+  color: var(--title-decor-color, #db00ff);
   font-weight: 700;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 0.8;
@@ -109,6 +127,8 @@
 }
 
 .header__content {
+  grid-column: 2;
+  grid-row: 3;
   inline-size: clamp(355px, 100%, 364px);
 }
 
@@ -123,10 +143,10 @@
 }
 
 .text-decor {
-  color: var(--accent-color, #ff0070);
+  color: var(--h3-color, #ff0070);
   font-weight: 700;
-  line-height: 1.3;
   font-size: 18px;
+  line-height: 1.3;
 }
 
 main {
@@ -153,6 +173,14 @@ main {
   text-shadow: 2px 2px 0px var(--accent-color, #ff0070);
 }
 
+.link-decor:hover {
+  border-bottom: 1px solid currentColor;
+}
+
+.link-decor:focus-visible {
+  border: 1px solid currentColor;
+}
+
 .images-section {
   display: flex;
   flex-direction: column;
@@ -168,34 +196,38 @@ main {
   text-shadow: 2px 2px var(--accent-color, #ff0070);
 }
 
-
-@media (width >= 768px) {
+@media (width >=768px) {
   .page {
     padding: 20px;
   }
 
   main {
-  gap: 80px;
+    gap: 80px;
   }
 
   .header {
     min-height: 984px;
   }
 
+  .header__content {
+    inline-size: clamp(364px, 100%, 491px);
+  }
+
   .title-decor {
     margin-inline-start: -20px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
   .section-first {
-    padding-block-start: 30px;
     display: grid;
     grid-template-columns: 1fr 2fr;
+    padding-block-start: 30px;
   }
 
   .section-second {
     display: grid;
     grid-template-columns: 1fr;
-    gap:20px;
+    gap: 20px;
   }
 
   .section-second-title {
@@ -205,7 +237,110 @@ main {
   .section-third {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: min-content;
+    grid-template-rows: 23px;
   }
 
+  .section-third__title {
+    grid-column-start: 2;
+    grid-row-start: 1;
+    inline-size: 100%;
+  }
+
+  .section-third__list {
+    grid-row: 2;
+    grid-column-start: 2;
+  }
+
+  .section-third__list-header {
+    font-weight: 400;
+  }
+
+  .images-section {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(231px, 1fr));
+    grid-template-rows: min-content repeat(12rem 14.375rem 19.875rem);
+    gap: 20px;
+    margin-block-end: 25px;
+  }
+
+  .images-section__header {
+    grid-column: 1/-1;
+    inline-size: 100%;
+  }
+
+  .images-section-item {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .images-section__sunset {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .images-section__ice {
+    grid-column: 3;
+    grid-row: span 2;
+  }
+
+  .images-section__tape {
+    grid-column: 1;
+    grid-row: 2 span;
+  }
+
+  .images-section__street {
+    grid-column: 2 span;
+  }
+
+  .footer {
+    min-height: 984px;
+    padding-inline-start: 20px;
+  }
+}
+
+@media (width >=1024px) {
+  .header {
+    min-height: 768px;
+    margin-bottom: -40px;
+    padding-bottom: 40px;
+  }
+
+  .decorated-zone::after {
+    margin-bottom: 40px;
+  }
+
+  .header__theme-menu {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    justify-self: center;
+    align-self: flex-start;
+  }
+
+  .header__theme-menu-list {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .section-second-title {
+    inline-size: 30%;
+  }
+
+  .section-second__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .footer {
+    min-height: 768px;
+    padding-block: 0;
+  }
+
+  .images-section {
+    margin-block-end: 30px;
+  }
+
+  h2 {
+    padding-block-end: 40px;
+  }
 }
