@@ -147,7 +147,7 @@
 }
 
 .text-decor {
-  color: var(--h3-color, #ff0070);
+  color: var(--section-header-color, #ff0070);
   font-weight: 700;
   font-size: 18px;
   line-height: 1.3;
