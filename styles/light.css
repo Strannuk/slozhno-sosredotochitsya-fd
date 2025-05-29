@@ -29,7 +29,7 @@
     --section-header-color:#353430;
   }
 
-  .theme-light .header__decoration-element {
+  .header__decoration-element {
   display: none;
 }
 }
