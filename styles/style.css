@@ -350,7 +350,8 @@
 }
 
 @media (width >=1024px) {
-  .header {
+  .header,
+  .footer {
     min-height: 768px;
   }
 
@@ -386,9 +387,5 @@
 
   .advice-section {
     grid-template-columns: 32% 66%;
-  }
-
-  .footer {
-    min-height: 768px;
   }
 }
