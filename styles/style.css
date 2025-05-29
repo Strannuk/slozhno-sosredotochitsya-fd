@@ -282,7 +282,7 @@
 
   .advice-section {
     display: grid;
-    grid-template-columns: 32% 66%;
+    grid-template-columns: 1fr 2fr;
     grid-template-rows: 23px;
   }
 
@@ -382,6 +382,10 @@
   .concentration-section__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .advice-section {
+    grid-template-columns: 32% 66%;
   }
 
   .footer {
