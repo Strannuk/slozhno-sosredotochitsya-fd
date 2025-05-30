@@ -159,19 +159,21 @@
   padding-block-end: 40px;
 }
 
-.section,
-.section__list,
-.section__list-item {
+.section {
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 
-.section,
 .section__list {
+  display: flex;
+  flex-direction: column;
   gap: 20px;
 }
 
 .section__list-item {
+  display: flex;
+  flex-direction: column;
   gap: 10px;
 }
 
