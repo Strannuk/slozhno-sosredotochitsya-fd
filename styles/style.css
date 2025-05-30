@@ -227,13 +227,17 @@
 }
 
 @media (width >=768px) {
+  .header,
+  .footer {
+    min-height: 1024px;
+  }
+
   .page {
     padding-inline: 20px;
     padding-block-start: 20px;
   }
 
   .header {
-    min-height: 1024px;
     padding-block-end: 40px;
   }
 
@@ -325,7 +329,6 @@
   }
 
   .footer {
-    min-height: 1024px;
     padding-inline-start: 20px;
     padding-block-end: 0;
   }
