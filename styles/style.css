@@ -166,10 +166,7 @@
   flex-direction: column;
 }
 
-.section {
-  gap:20px;
-}
-
+.section,
 .section__list {
   gap: 20px;
 }
