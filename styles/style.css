@@ -159,21 +159,22 @@
   padding-block-end: 40px;
 }
 
-.section {
+.section,
+.section__list,
+.section__list-item {
   display: flex;
   flex-direction: column;
+}
+
+.section {
   gap:20px;
 }
 
 .section__list {
-  display: flex;
-  flex-direction: column;
   gap: 20px;
 }
 
 .section__list-item {
-  display: flex;
-  flex-direction: column;
   gap: 10px;
 }
 
@@ -259,14 +260,16 @@
     padding-block-end: 0;
   }
 
-  .focus-section {
+  .section {
     display: grid;
+  }
+
+  .focus-section {
     grid-template-columns: 1fr 2fr;
     padding-block-start: 10px;
   }
 
   .concentration-section {
-    display: grid;
     grid-template-columns: 1fr;
   }
 
@@ -275,7 +278,6 @@
   }
 
   .advice-section {
-    display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 23px;
   }
