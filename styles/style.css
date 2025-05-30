@@ -159,31 +159,21 @@
   padding-block-end: 40px;
 }
 
-.focus-section,
-.focus-section__list,
-.focus-section__list-item,
-.concentration-section,
-.concentration-section__list,
-.concentration-section__list-item,
-.advice-section,
-.advice-section__list,
-.advice-section__list-item {
+.section {
   display: flex;
   flex-direction: column;
+  gap:20px;
 }
 
-.focus-section,
-.focus-section__list,
-.concentration-section,
-.concentration-section__list,
-.advice-section,
-.advice-section__list {
+.section__list {
+  display: flex;
+  flex-direction: column;
   gap: 20px;
 }
 
-.focus-section__list-item,
-.concentration-section__list-item,
-.advice-section__list-item {
+.section__list-item {
+  display: flex;
+  flex-direction: column;
   gap: 10px;
 }
 
@@ -367,7 +357,6 @@
   }
 
   .header__theme-menu-list {
-    display: flex;
     flex-direction: row;
     gap: 11px;
   }
