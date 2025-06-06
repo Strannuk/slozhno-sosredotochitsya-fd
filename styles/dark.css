@@ -10,3 +10,6 @@
   --section-header-color:#ff0070;
 }
 
+.theme-dark .header__decoration-element {
+  display: block;
+}
